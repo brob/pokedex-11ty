@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Robinson's PokeDex</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+        <h1>Robinson's Pokedex</h1>
+        <ul id="pokedex">
+            {% for pokemon in pokemon %}
+                <li class="card">
+                    <img class="card-image" src="{{ pokemon.image }}"/>
+                    <h2 class="card-title">{{ pokemon.id }}. {{ pokemon.name }}</h2>
+                    <p class="card-subtitle">Type: {{ pokemon.type }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    
+    
+</body>
+</html>
