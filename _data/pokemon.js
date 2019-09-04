@@ -18,8 +18,5 @@ async function fetchPokemon() {
 };
 
 module.exports = async function() {
-    let pokemon = await fetchPokemon();
-    console.log(pokemon);
-
-    return pokemon
+    return await fetchPokemon();
 }
