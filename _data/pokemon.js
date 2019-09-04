@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-async function fetchPokemon() {
+const fetchPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 150; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
