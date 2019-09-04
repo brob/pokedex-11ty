@@ -6,7 +6,7 @@ async function fetchPokemon() {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
-    let pokemans = Promise.all(promises).then((results) => {
+    return Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
             name: result.name,
             image: result.sprites['front_default'],
@@ -15,7 +15,6 @@ async function fetchPokemon() {
         }));
         return pokemon;
     });
-    return pokemans
 };
 
 module.exports = async function() {
